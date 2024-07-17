@@ -2,10 +2,19 @@ DROP DATABASE IF EXISTS movies_db;
 CREATE DATABASE movies_db;
 USE movies_db;
 
-CREATE TABLE movies (
-
+CREATE TABLE movie (
+    id INT NOT NULL,
+    movie_name VARCHAR(30) NOT NULL,
+    movie_director VARCHAR(30) NOT NULL,
+    release_date DATE,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE reviews (
-
+CREATE TABLE review (
+    id INT NOT NULL,
+    movie_id INT,
+    review TEXT,
+    FOREIGN KEY (movie_id)
+    REFERENCES movie(id)
+    ON DELETE SET NULL
 );
