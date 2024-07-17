@@ -6,7 +6,7 @@ CREATE TABLE movie (
     id INT NOT NULL,
     movie_name VARCHAR(30) NOT NULL,
     movie_director VARCHAR(30) NOT NULL,
-    release_date DATE,
+    release_date VARCHAR(30) NOT NULL,
     PRIMARY KEY (id)
 );
 
