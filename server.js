@@ -15,10 +15,22 @@ const db = mysql.createConnection(
     host: 'localhost',
     user: 'root',
     password: '*Pandazippo12',
-    database: 'courses_db'
+    database: 'movies_db'
   },
   console.log(`Connected to the courses_db database.`)
 );
+
+app.get('/api/movies', (req, res) => {
+    const sql = "SELECT * FROM movie;";
+    db.query(sql, function(err, results) {
+        console.log(results);
+    })
+});
+
+
+db.query('SELECT * FROM movie', function (err, results) {
+    console.log(results);
+  });
 
 app.use((req, res) => {
     res.status(404).end();
